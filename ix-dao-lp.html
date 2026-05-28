@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IX DAO — Liquidity Provider Program</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0f',
+            surface: '#12121a',
+            card: '#1a1a26',
+            border: '#2a2a3e',
+            gold: '#c9a84c',
+            teal: '#2dd4bf',
+            muted: '#6b7280',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #0a0a0f; }
+    .gradient-text {
+      background: linear-gradient(135deg, #c9a84c, #2dd4bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gold-border { border-color: #c9a84c44; }
+    .teal-glow { box-shadow: 0 0 24px #2dd4bf22; }
+    .gold-glow { box-shadow: 0 0 24px #c9a84c22; }
+    .flow-arrow::after {
+      content: '↓';
+      display: block;
+      text-align: center;
+      color: #2dd4bf;
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    .flow-arrow:last-child::after { display: none; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans text-gray-200 antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/static/ix-dao-logo.png" alt="IX DAO" class="w-8 h-8 object-contain" />
+        <span class="font-semibold text-white">IX DAO</span>
+        <span class="text-muted text-sm">/ LP Program</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm text-muted">
+        <a href="#what" class="hover:text-white transition-colors">About</a>
+        <a href="#how" class="hover:text-white transition-colors">How It Works</a>
+        <a href="#eligibility" class="hover:text-white transition-colors">Eligibility</a>
+        <a href="#risks" class="hover:text-white transition-colors">Risks</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <button class="bg-teal/10 border border-teal/30 text-teal text-sm px-4 py-2 rounded-lg hover:bg-teal/20 transition-colors">
+        Connect Wallet
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-2 text-sm text-muted mb-8">
+        <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+        IX DAO LP Program v1.0 — Now Open
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+        Participate Deeper.<br />
+        <span class="gradient-text">Support the Ecosystem.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+        IX DAO Liquidity Providers are governance-connected ecosystem contributors —
+        not yield farmers. Build the infrastructure that powers the INFAXIA economy.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="bg-teal text-black font-semibold px-8 py-4 rounded-xl hover:bg-teal/90 transition-colors teal-glow">
+          Connect Wallet to Participate
+        </button>
+        <a href="#what" class="border border-border text-gray-300 font-medium px-8 py-4 rounded-xl hover:border-teal/50 hover:text-white transition-colors">
+          Learn More ↓
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-muted">
+        LP participation does not guarantee fixed returns. Read full risk disclosure below.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT IS IX DAO LP -->
+  <section id="what" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Definition</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">What is IX DAO LP?</h2>
+          <p class="text-muted leading-relaxed mb-6">
+            IX DAO LP refers to ecosystem participants who provide approved liquidity to designated
+            INFAXIA-related liquidity pools under DAO-approved conditions — contributing to
+            liquidity depth, market stability, trading accessibility, and ecosystem economic continuity.
+          </p>
+          <p class="text-muted leading-relaxed">
+            This is <span class="text-white font-medium">governance-connected contribution activity</span> and
+            ecosystem infrastructure support — not a passive income product or financial security.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-card border border-border rounded-xl p-5">
+            <p class="text-teal text-xs font-mono uppercase tracking-widest mb-3">IX DAO LP IS</p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span> Governance-connected contribution activity</li>
+              <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span> Ecosystem infrastructure support</li>
+              <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span> Economic stabilization layer</li>
+              <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span> Long-term utility economy growth</li>
+            </ul>
+          </div>
+          <div class="bg-card border border-red-900/40 rounded-xl p-5">
+            <p class="text-red-400 text-xs font-mono uppercase tracking-widest mb-3">IX DAO LP IS NOT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">✗</span> Guaranteed profit participation</li>
+              <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">✗</span> Fixed yield product or APY promise</li>
+              <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">✗</span> Security product or revenue-sharing contract</li>
+              <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">✗</span> Passive income guarantee system</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE PRINCIPLES -->
+  <section class="py-24 px-6 bg-surface/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-sm font-mono uppercase tracking-widest mb-4">Foundation</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Core Principles</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card border border-border rounded-xl p-6 gold-glow">
+          <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-gold text-xl">◈</span>
+          </div>
+          <h3 class="text-white font-semibold mb-3">Revenue First Alignment</h3>
+          <p class="text-muted text-sm leading-relaxed">
+            INFAXIA prioritizes event revenue, participation activity, platform take rate,
+            and marketplace activity before token appreciation assumptions.
+            LP systems support the platform economy — they do not replace it.
+          </p>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-teal text-xl">◎</span>
+          </div>
+          <h3 class="text-white font-semibold mb-3">Participation ≠ Guaranteed Reward</h3>
+          <p class="text-muted text-sm leading-relaxed">
+            LP participation does not guarantee fixed APY, ROI, token appreciation, or loss protection.
+            INFAXIA does not adopt a "Play to Earn" structure. You participate to support
+            ecosystem growth and governance-connected infrastructure.
+          </p>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-purple-400 text-xl">⬡</span>
+          </div>
+          <h3 class="text-white font-semibold mb-3">Legal Separation</h3>
+          <p class="text-muted text-sm leading-relaxed">
+            IX DAO LP remains structurally separated from direct game outcomes, event rankings,
+            IXP conversion systems, and direct cash reward systems. IXP remains an internal,
+            non-transferable, non-cashable participation unit only.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Mechanism</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">How It Works</h2>
+        <p class="text-muted mt-4 max-w-xl mx-auto">
+          The LP layer reinforces a sustainable economic cycle — not speculative dependency.
+        </p>
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-4">
+        <div class="flex flex-col md:flex-row items-center gap-0 md:gap-4 w-full justify-center">
+          <!-- Step 1 -->
+          <div class="bg-card border border-teal/30 rounded-xl p-6 text-center w-full md:w-40 teal-glow">
+            <div class="text-3xl mb-2">🎮</div>
+            <p class="text-teal font-semibold text-sm">Participate</p>
+            <p class="text-muted text-xs mt-1">Engage in the INFAXIA ecosystem</p>
+          </div>
+          <div class="text-teal text-2xl rotate-90 md:rotate-0 my-2 md:my-0">→</div>
+          <!-- Step 2 -->
+          <div class="bg-card border border-border rounded-xl p-6 text-center w-full md:w-40">
+            <div class="text-3xl mb-2">⚙️</div>
+            <p class="text-white font-semibold text-sm">Utility</p>
+            <p class="text-muted text-xs mt-1">IXT utility drives ecosystem value</p>
+          </div>
+          <div class="text-teal text-2xl rotate-90 md:rotate-0 my-2 md:my-0">→</div>
+          <!-- Step 3 -->
+          <div class="bg-card border border-border rounded-xl p-6 text-center w-full md:w-40">
+            <div class="text-3xl mb-2">🔒</div>
+            <p class="text-white font-semibold text-sm">Retention</p>
+            <p class="text-muted text-xs mt-1">Long-term holders deepen liquidity</p>
+          </div>
+          <div class="text-teal text-2xl rotate-90 md:rotate-0 my-2 md:my-0">→</div>
+          <!-- Step 4 -->
+          <div class="bg-card border border-border rounded-xl p-6 text-center w-full md:w-40">
+            <div class="text-3xl mb-2">🗳️</div>
+            <p class="text-white font-semibold text-sm">Governance</p>
+            <p class="text-muted text-xs mt-1">IXG-connected DAO voting</p>
+          </div>
+          <div class="text-teal text-2xl rotate-90 md:rotate-0 my-2 md:my-0">→</div>
+          <!-- Step 5 -->
+          <div class="bg-card border border-gold/30 rounded-xl p-6 text-center w-full md:w-40 gold-glow">
+            <div class="text-3xl mb-2">📈</div>
+            <p class="text-gold font-semibold text-sm">Economic Stability</p>
+            <p class="text-muted text-xs mt-1">Sustainable ecosystem expansion</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supported Assets -->
+      <div class="mt-16 bg-card border border-border rounded-2xl p-8">
+        <h3 class="text-white font-semibold text-lg mb-6">Supported Liquidity Assets</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <p class="text-teal text-xs font-mono uppercase tracking-widest mb-3">Approved</p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal"></span> IXT paired assets</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal"></span> Governance-approved stable pairs</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal"></span> DAO-approved ecosystem assets</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-red-400 text-xs font-mono uppercase tracking-widest mb-3">Prohibited</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> IXP liquidity pools</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> Gameplay-to-cash LP rewards</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> Fixed guaranteed APY promises</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-muted text-xs font-mono uppercase tracking-widest mb-3">IXP Status</p>
+            <div class="bg-surface rounded-lg p-4 text-sm text-muted">
+              IXP remains <span class="text-white">internal credit only</span> — non-transferable, non-cashable, and non-tradable. It is a participation unit, not a liquidity asset.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section id="eligibility" class="py-24 px-6 bg-surface/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-sm font-mono uppercase tracking-widest mb-4">Requirements</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">LP Eligibility</h2>
+        <p class="text-muted mt-4 max-w-xl mx-auto">
+          Participants qualify through a combination of holding conditions, governance readiness, and activity history.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-card border border-border rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <span class="text-gold">◈</span> Base Requirements
+          </h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">01</span>
+              <span>IXT holding conditions met</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">02</span>
+              <span>Staking conditions fulfilled</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">03</span>
+              <span>Governance readiness verified</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">04</span>
+              <span>Activity and participation history reviewed</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">05</span>
+              <span>DAO eligibility requirements satisfied</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <span class="text-teal mt-0.5 font-mono">06</span>
+              <span>Community contribution metrics met</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <span class="text-purple-400">⬡</span> Optional Future Conditions
+          </h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3 text-muted">
+              <span class="text-purple-400 mt-0.5">→</span>
+              <span>Rank requirement</span>
+            </li>
+            <li class="flex items-start gap-3 text-muted">
+              <span class="text-purple-400 mt-0.5">→</span>
+              <span>NFT requirement</span>
+            </li>
+            <li class="flex items-start gap-3 text-muted">
+              <span class="text-purple-400 mt-0.5">→</span>
+              <span>Governance participation score</span>
+            </li>
+            <li class="flex items-start gap-3 text-muted">
+              <span class="text-purple-400 mt-0.5">→</span>
+              <span>Anti-abuse verification</span>
+            </li>
+            <li class="flex items-start gap-3 text-muted">
+              <span class="text-purple-400 mt-0.5">→</span>
+              <span>Treasury risk approval</span>
+            </li>
+          </ul>
+          <div class="mt-4 bg-surface rounded-lg p-3 text-xs text-muted border border-dashed border-border">
+            Conditions are subject to DAO governance adjustment at any time.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LP INCENTIVES -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Incentives</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">LP Reward Structure</h2>
+        <p class="text-muted mt-4 max-w-xl mx-auto">
+          Incentives exist to support ecosystem contribution — not to attract speculative capital.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-white font-semibold mb-4">Possible LP Incentives</h3>
+          <div class="flex items-start gap-4 bg-card border border-border rounded-xl p-4">
+            <span class="text-teal text-xl mt-0.5">◎</span>
+            <div>
+              <p class="text-white text-sm font-medium">Governance Incentives</p>
+              <p class="text-muted text-xs mt-1">Increased governance weight and voting power within IX DAO</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-card border border-border rounded-xl p-4">
+            <span class="text-teal text-xl mt-0.5">◎</span>
+            <div>
+              <p class="text-white text-sm font-medium">DAO Participation Incentives</p>
+              <p class="text-muted text-xs mt-1">Priority access to DAO proposals and ecosystem decisions</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-card border border-border rounded-xl p-4">
+            <span class="text-teal text-xl mt-0.5">◎</span>
+            <div>
+              <p class="text-white text-sm font-medium">Ecosystem Contribution Allocation</p>
+              <p class="text-muted text-xs mt-1">DAO-approved ecosystem support allocation from treasury</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-card border border-border rounded-xl p-4">
+            <span class="text-teal text-xl mt-0.5">◎</span>
+            <div>
+              <p class="text-white text-sm font-medium">Approved Token Emissions</p>
+              <p class="text-muted text-xs mt-1">Dynamically adjustable emissions, subject to DAO governance</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-card border border-gold/20 rounded-xl p-6 gold-glow h-fit">
+          <h3 class="text-gold font-semibold mb-4">Important Disclosures</h3>
+          <ul class="space-y-3 text-sm text-muted">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">!</span>
+              Rewards are <strong class="text-white">not guaranteed</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">!</span>
+              Emissions are <strong class="text-white">dynamically adjustable</strong> by DAO vote
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">!</span>
+              DAO may <strong class="text-white">reduce or suspend</strong> incentives at any time
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">!</span>
+              <strong class="text-white">Sustainability</strong> overrides short-term attractiveness
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">!</span>
+              Treasury prioritizes <strong class="text-white">operational continuity</strong> before yield distribution
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border">
+            <p class="text-xs text-muted">Governance parameters — including emission rates, lock duration, unstake cooldown, and supported pools — are controlled through IXG-connected governance mechanisms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK DISCLOSURE -->
+  <section id="risks" class="py-24 px-6 bg-surface/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-red-400 text-sm font-mono uppercase tracking-widest mb-4">Risk Disclosure</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Understand the Risks</h2>
+        <p class="text-muted mt-4">
+          All IX DAO LP participants must acknowledge and accept the following risks before participating.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">Impermanent Loss Risk</p>
+            <p class="text-muted text-xs mt-1">Asset value relative to holding may decrease due to price divergence in the pool.</p>
+          </div>
+        </div>
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">Token Volatility Risk</p>
+            <p class="text-muted text-xs mt-1">IXT and other ecosystem tokens may fluctuate significantly in market value.</p>
+          </div>
+        </div>
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">Governance Adjustment Risk</p>
+            <p class="text-muted text-xs mt-1">DAO may vote to change LP parameters, emissions, or program terms.</p>
+          </div>
+        </div>
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">Smart Contract Risk</p>
+            <p class="text-muted text-xs mt-1">Bugs or vulnerabilities in smart contracts may result in loss of funds.</p>
+          </div>
+        </div>
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">Liquidity Withdrawal Risk</p>
+            <p class="text-muted text-xs mt-1">Lock periods and unstake cooldowns may limit access to your liquidity.</p>
+          </div>
+        </div>
+        <div class="bg-card border border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+          <span class="text-red-400 text-xl mt-0.5">⚠</span>
+          <div>
+            <p class="text-white text-sm font-medium">No Guaranteed Profitability</p>
+            <p class="text-muted text-xs mt-1">LP participation is ecosystem growth dependency, not a profit instrument.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-red-950/20 border border-red-900/40 rounded-xl p-6 text-center">
+        <p class="text-red-300 text-sm">
+          IX DAO LP must never be marketed as <strong>"guaranteed passive income," "risk-free yield," "play and earn automatically,"</strong> or <strong>"guaranteed profit pool."</strong>
+          Any such representation is prohibited.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Questions</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Is IX DAO LP a way to earn passive income?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">
+            No. IX DAO LP is governance-connected ecosystem infrastructure participation.
+            It does not guarantee any fixed return, APY, or passive income.
+            Incentives may exist but are dynamically adjustable by DAO governance
+            and are never guaranteed.
+          </p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Can I convert IXP to cash through LP?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">
+            No. IXP is prohibited from becoming an external tradable liquidity asset.
+            IXP remains an internal, non-transferable, non-cashable participation unit only.
+            Any IXP → USDT or game-result-based cash-out structure is prohibited by the DAO.
+          </p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Who controls the LP program parameters?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">
+            IX DAO LP parameters — including emission rates, lock duration, unstake cooldown,
+            treasury allocation, and supported pools — are adjusted through IXG-connected
+            governance mechanisms. The DAO manages and operates the LP program,
+            not INFAXIA directly.
+          </p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            What assets can I provide liquidity with?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">
+            Approved liquidity pools include IXT paired assets, governance-approved stable pairs,
+            and DAO-approved ecosystem assets. Specific pool approvals are subject to DAO
+            governance votes and may change over time.
+          </p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            What happens if the DAO suspends LP incentives?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">
+            The DAO may reduce or suspend LP incentives at any time through governance vote.
+            This is a core design feature, not a bug — ecosystem sustainability
+            and operational continuity take priority over short-term yield attractiveness.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FOOTER -->
+  <section class="py-24 px-6 border-t border-border">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Unlock Higher Governance Alignment.
+      </h2>
+      <p class="text-muted mb-10 max-w-xl mx-auto">
+        Participate deeper. Support the ecosystem. Build the infrastructure that sustains long-term INFAXIA economic durability.
+      </p>
+      <button class="bg-teal text-black font-semibold px-10 py-4 rounded-xl hover:bg-teal/90 transition-colors teal-glow text-lg">
+        Connect Wallet to Begin
+      </button>
+      <p class="mt-4 text-xs text-muted">
+        By participating, you acknowledge all risk disclosures outlined above.
+      </p>
+    </div>
+  </section>
+
+  <footer class="border-t border-border py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="/static/ix-dao-logo.png" alt="IX DAO" class="w-7 h-7 object-contain" />
+        <span class="text-muted text-sm">IX DAO LP Program v1.0</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-muted">
+        <a href="#" class="hover:text-white transition-colors">Discord</a>
+        <a href="#" class="hover:text-white transition-colors">X (Twitter)</a>
+        <a href="#" class="hover:text-white transition-colors">Telegram</a>
+        <a href="#" class="hover:text-white transition-colors">Whitepaper</a>
+      </div>
+      <p class="text-xs text-muted">© 2026 INFAXIA. Not a financial product.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
