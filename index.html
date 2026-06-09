@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IX DAO — Complete the Job, Get Paid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0f',
+            surface: '#12121a',
+            card: '#1a1a26',
+            border: '#2a2a3e',
+            gold: '#c9a84c',
+            teal: '#2dd4bf',
+            muted: '#6b7280',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #0a0a0f; }
+    .gradient-text {
+      background: linear-gradient(135deg, #c9a84c, #2dd4bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .teal-glow { box-shadow: 0 0 24px #2dd4bf22; }
+    .gold-glow { box-shadow: 0 0 24px #c9a84c22; }
+    html { scroll-behavior: smooth; }
+    details summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="font-sans text-gray-200 antialiased">
+
+  <!-- ─── NAV ─── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/ix-dao-logo.png" alt="IX DAO" class="w-8 h-8 object-contain" />
+        <span class="font-semibold text-white">IX DAO</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm text-muted">
+        <a href="#ecosystem" class="hover:text-white transition-colors">About</a>
+        <a href="#jobs" class="hover:text-white transition-colors">Jobs</a>
+        <a href="#how" class="hover:text-white transition-colors">How It Works</a>
+        <a href="#eligibility" class="hover:text-white transition-colors">Eligibility</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <a href="https://discord.gg/pmMjc6Mnbm" target="_blank" class="bg-teal text-black text-sm font-semibold px-4 py-2 rounded-lg hover:bg-teal/90 transition-colors">
+        Join Us
+      </a>
+    </div>
+  </nav>
+
+  <!-- ─── 1. HERO ─── -->
+  <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-2 text-sm text-muted mb-8">
+        <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+        Now Accepting Members — Limited Spots
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+        Complete the Job,<br />
+        <span class="gradient-text">Get Paid.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
+        We pay community members to explore and review the INFAXIA platform.
+        No investment. No experience required. Just show up and get paid.
+      </p>
+
+      <!-- Hero CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="https://discord.gg/pmMjc6Mnbm" target="_blank" class="bg-teal text-black font-semibold px-8 py-4 rounded-xl hover:bg-teal/90 transition-colors teal-glow text-base">
+          Join IX DAO Discord →
+        </a>
+        <a href="#jobs" class="border border-border text-gray-300 font-medium px-8 py-4 rounded-xl hover:border-teal/50 hover:text-white transition-colors text-base">
+          See Available Jobs ↓
+        </a>
+      </div>
+
+      <!-- Why Join -->
+      <div class="w-full max-w-3xl mx-auto grid md:grid-cols-3 gap-4">
+        <div class="bg-card border border-border rounded-2xl p-6 text-left">
+          <p class="text-2xl mb-3">🚫</p>
+          <p class="text-white font-semibold mb-2">Zero Risk</p>
+          <p class="text-muted text-xs leading-relaxed">No investment, no deposits, no fees. You only put in your time and effort.</p>
+        </div>
+        <div class="bg-card border border-teal/20 rounded-2xl p-6 text-left teal-glow">
+          <p class="text-2xl mb-3">✅</p>
+          <p class="text-white font-semibold mb-2">Real Tasks</p>
+          <p class="text-muted text-xs leading-relaxed">Clear deliverables. No guesswork. You know exactly what to do and what you earn.</p>
+        </div>
+        <div class="bg-card border border-border rounded-2xl p-6 text-left">
+          <p class="text-2xl mb-3">💸</p>
+          <p class="text-white font-semibold mb-2">Real Pay</p>
+          <p class="text-muted text-xs leading-relaxed">Admin-verified payouts sent directly to the wallet of your choice after completion.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── STATS BAR ─── -->
+  <section class="py-10 px-6 border-y border-border bg-surface/30">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-2xl font-bold text-white">3+</p>
+        <p class="text-xs text-muted mt-1">Job Categories</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-teal">7.5 USDT</p>
+        <p class="text-xs text-muted mt-1">Max Reward Per Job</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-white">100%</p>
+        <p class="text-xs text-muted mt-1">Admin-Verified Payouts</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-gold">Free</p>
+        <p class="text-xs text-muted mt-1">No Investment Required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOCIAL PROOF ─── -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-2 text-xs text-muted mb-6">
+          <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+          Real members from the INFAXIA Discord
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Real People. Real Rewards.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <p class="text-gray-200 text-sm leading-relaxed mb-5">"RPS CHAMP HERE! Got my 50 IXP immediately after the tournament. <span class="text-teal font-semibold">LEGIT!</span>"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-teal/20 border border-teal/30 flex items-center justify-center text-teal text-xs font-bold">V</div>
+            <div>
+              <p class="text-white text-xs font-semibold">^^Valkyrie^^</p>
+              <p class="text-muted text-xs">INFAXIA Community Member</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <p class="text-gray-200 text-sm leading-relaxed mb-5">"Joined AMA and Poker — happy to say I really did receive the IXP rewards. <span class="text-teal font-semibold">So far, it's LEGIT!</span>"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold text-xs font-bold">B</div>
+            <div>
+              <p class="text-white text-xs font-semibold">beyb_16</p>
+              <p class="text-muted text-xs">INFAXIA Community Member</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <p class="text-gray-200 text-sm leading-relaxed mb-5">"The rewards arrive as soon as the game ends. <span class="text-teal font-semibold">Everything's smooth on my end.</span> Loving the experience so far!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-red-400 text-xs font-bold">D</div>
+            <div>
+              <p class="text-white text-xs font-semibold">Daredevil</p>
+              <p class="text-muted text-xs">INFAXIA Community Member</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <p class="text-gray-200 text-sm leading-relaxed mb-5">"Just tried to join Poker and got my IXP too. <span class="text-teal font-semibold">Excited to keep grinding</span> and see what's next!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xs font-bold">P</div>
+            <div>
+              <p class="text-white text-xs font-semibold">Powerpuff girl</p>
+              <p class="text-muted text-xs">INFAXIA Community Member</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. THE ECOSYSTEM ─── -->
+  <section id="ecosystem" class="py-24 px-6 bg-surface/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">The Ecosystem</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Two Organisations. One Ecosystem.</h2>
+        <p class="text-muted max-w-2xl mx-auto">INFAXIA is the platform. IX DAO is the community organisation that supports and grows it — and pays members to do so.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- IX DAO -->
+        <div class="bg-card border border-gold/20 rounded-2xl p-8 gold-glow">
+          <p class="text-gold text-xs font-mono uppercase tracking-widest mb-3">The Support Organisation</p>
+          <h3 class="text-white font-bold text-2xl mb-4">IX DAO</h3>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            IX DAO is where the INFAXIA community comes alive. Members collaborate, take on jobs, earn rewards, and shape the future of the ecosystem — together. Everyone has a voice. Everyone can contribute.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">🏛</span>
+              <span class="text-white text-xs font-medium">Community Governance</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">💼</span>
+              <span class="text-white text-xs font-medium">Treasury Management</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">💰</span>
+              <span class="text-white text-xs font-medium">Jobs & USDT Rewards</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">🌐</span>
+              <span class="text-white text-xs font-medium">Ecosystem Expansion</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="https://discord.gg/pmMjc6Mnbm" target="_blank" class="block bg-gold/10 border border-gold/30 text-gold text-xs font-medium px-3 py-2 rounded-lg text-center hover:bg-gold/20 transition-colors">Join IX DAO Discord →</a>
+          </div>
+        </div>
+
+        <!-- INFAXIA -->
+        <div class="bg-card border border-teal/20 rounded-2xl p-8 teal-glow">
+          <p class="text-teal text-xs font-mono uppercase tracking-widest mb-3">The Platform</p>
+          <h3 class="text-white font-bold text-2xl mb-4">INFAXIA</h3>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            A metaverse gaming and entertainment platform where players compete, explore, and collect
+            through live events, tournaments, and community activities.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">🎮</span>
+              <span class="text-white text-xs font-medium">Games & Tournaments</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">🌐</span>
+              <span class="text-white text-xs font-medium">Live Metaverse Events</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">🛒</span>
+              <span class="text-white text-xs font-medium">NFT Marketplace</span>
+            </div>
+            <div class="bg-surface rounded-lg p-3 flex items-center gap-2">
+              <span class="text-lg">👤</span>
+              <span class="text-white text-xs font-medium">Avatar & Identity</span>
+            </div>
+          </div>
+          <p class="text-xs text-muted mt-4 mb-3">⚠ No gambling games included.</p>
+          <div class="flex gap-3">
+            <a href="https://go.infaxia.io/register" target="_blank" class="flex-1 bg-teal/10 border border-teal/30 text-teal text-xs font-medium px-3 py-2 rounded-lg text-center hover:bg-teal/20 transition-colors">Register on INFAXIA →</a>
+            <a href="https://go.infaxia.io/event-list" target="_blank" class="flex-1 bg-surface border border-border text-gray-400 text-xs font-medium px-3 py-2 rounded-lg text-center hover:text-white transition-colors">View Events →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Buttons below Ecosystem -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4 pb-8">
+      <a href="#jobs" class="bg-teal text-black font-semibold px-8 py-4 rounded-xl hover:bg-teal/90 transition-colors teal-glow text-lg text-center">
+        View Available Jobs
+      </a>
+      <a href="#how" class="border border-border text-gray-300 font-medium px-8 py-4 rounded-xl hover:border-teal/50 hover:text-white transition-colors text-lg text-center">
+        How It Works ↓
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ─── 3. AVAILABLE JOBS ─── -->
+  <section id="jobs" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Get Paid for Your Work</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Available Jobs</h2>
+        <p class="text-muted max-w-xl mx-auto">Pick a job. Complete it. Get paid — directly to the wallet of your choice.</p>
+      </div>
+
+      <!-- Featured Jobs -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+        <div class="bg-card border border-teal/30 rounded-2xl p-6 teal-glow flex flex-col">
+          <div class="text-4xl mb-4">🧭</div>
+          <p class="text-teal text-xs font-mono uppercase tracking-widest mb-2">New Users Only</p>
+          <h3 class="text-white font-bold text-lg mb-2">User Experience Job</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4 flex-1">Go through the full INFAXIA onboarding journey and share your honest feedback. One-time exclusive for new users.</p>
+          <div class="bg-surface rounded-lg p-3 mb-4 text-center">
+            <p class="text-xs text-muted mb-1">Reward</p>
+            <p class="text-teal font-bold text-xl">Up to 2.5 USDT</p>
+          </div>
+          <ul class="text-xs text-muted space-y-1 mb-6">
+            <li>⚡ Limited slots — one-time only for new members</li>
+            <li>✓ No experience required</li>
+            <li>✓ Full onboarding guided</li>
+          </ul>
+          <a href="#how" class="bg-teal text-black font-semibold text-sm px-4 py-3 rounded-lg text-center hover:bg-teal/90 transition-colors">Claim Your Spot →</a>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6 flex flex-col">
+          <div class="text-4xl mb-4">🎮</div>
+          <p class="text-gold text-xs font-mono uppercase tracking-widest mb-2">All Members</p>
+          <h3 class="text-white font-bold text-lg mb-2">Game Review Job</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4 flex-1">Play and analyze INFAXIA games. Share honest, detailed feedback that shapes future game development.</p>
+          <div class="bg-surface rounded-lg p-3 mb-4 text-center">
+            <p class="text-xs text-muted mb-1">Reward per review</p>
+            <p class="text-gold font-bold text-xl">Up to 7.5 USDT</p>
+          </div>
+          <ul class="text-xs text-muted space-y-1 mb-6">
+            <li>✓ RPS, Treasure Hunt, Car Racing</li>
+            <li>✓ 1–2.5 USDT per approved review</li>
+            <li>✓ Max 3 reviews per job</li>
+          </ul>
+          <a href="#how" class="border border-teal/40 text-teal font-semibold text-sm px-4 py-3 rounded-lg text-center hover:bg-teal/10 transition-colors">Apply Now →</a>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6 flex flex-col">
+          <div class="text-4xl mb-4">🐞</div>
+          <p class="text-purple-400 text-xs font-mono uppercase tracking-widest mb-2">All Members</p>
+          <h3 class="text-white font-bold text-lg mb-2">Bug Hunting Job</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4 flex-1">Explore games, marketplace, and wallet. Find and report bugs — the bigger the bug, the bigger the reward.</p>
+          <div class="bg-surface rounded-lg p-3 mb-4 text-center">
+            <p class="text-xs text-muted mb-1">Reward per bug</p>
+            <p class="text-purple-400 font-bold text-xl">0.5 USDT+</p>
+          </div>
+          <ul class="text-xs text-muted space-y-1 mb-6">
+            <li>✓ Reward based on severity</li>
+            <li>✓ Games, marketplace, wallet, UI</li>
+            <li>✓ Free to participate</li>
+          </ul>
+          <a href="#how" class="border border-border text-gray-300 font-semibold text-sm px-4 py-3 rounded-lg text-center hover:border-teal/40 hover:text-white transition-colors">Apply Now →</a>
+        </div>
+
+      </div>
+
+      <!-- More Jobs Coming -->
+      <div class="bg-card border border-border rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-white font-semibold">More Jobs Coming</h3>
+          <span class="text-xs font-mono text-gold bg-gold/10 border border-gold/20 px-3 py-1 rounded-full">Coming Soon</span>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">📋</span>
+            <div>
+              <p class="text-white text-sm font-medium">Task-Based Jobs</p>
+              <p class="text-muted text-xs mt-1">Complete specific structured tasks assigned by the DAO</p>
+            </div>
+          </div>
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">📣</span>
+            <div>
+              <p class="text-white text-sm font-medium">Engagement & Activity</p>
+              <p class="text-muted text-xs mt-1">Drive platform activity and community interactions</p>
+            </div>
+          </div>
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">🎯</span>
+            <div>
+              <p class="text-white text-sm font-medium">Skill-Based Jobs</p>
+              <p class="text-muted text-xs mt-1">Apply your expertise to contribute to the ecosystem</p>
+            </div>
+          </div>
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">🌐</span>
+            <div>
+              <p class="text-white text-sm font-medium">Social & Community</p>
+              <p class="text-muted text-xs mt-1">Grow and support the IX DAO and INFAXIA communities</p>
+            </div>
+          </div>
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">🎮</span>
+            <div>
+              <p class="text-white text-sm font-medium">Event-Related Jobs</p>
+              <p class="text-muted text-xs mt-1">Participate in and support INFAXIA events</p>
+            </div>
+          </div>
+          <div class="bg-surface rounded-xl p-4 flex items-start gap-3 opacity-50">
+            <span class="text-xl">💰</span>
+            <div>
+              <p class="text-white text-sm font-medium">Economy & Gameplay</p>
+              <p class="text-muted text-xs mt-1">Contribute to the in-game economy and gameplay systems</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted text-xs mt-6">Join the Discord to be the first to know when new jobs drop. <a href="https://discord.gg/pmMjc6Mnbm" target="_blank" class="text-teal hover:underline">Join Discord →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. HOW IT WORKS ─── -->
+  <section id="how" class="py-24 px-6 bg-surface/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">Process</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">From Sign-Up to Payout — Step by Step</h2>
+        <p class="text-muted max-w-xl mx-auto">Everything you need to do from start to your first payout.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-9 h-9 bg-teal/10 border border-teal/30 rounded-full flex items-center justify-center text-teal font-bold font-mono text-sm mb-4">01</div>
+          <p class="text-xl mb-2">💬</p>
+          <p class="text-white font-semibold mb-2">Join IX DAO Discord</p>
+          <p class="text-muted text-xs leading-relaxed">Your first step into the community. Join the IX DAO Discord server to get your member role, access job announcements, and connect with other contributors.</p>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-9 h-9 bg-teal/10 border border-teal/30 rounded-full flex items-center justify-center text-teal font-bold font-mono text-sm mb-4">02</div>
+          <p class="text-xl mb-2">🎮</p>
+          <p class="text-white font-semibold mb-2">Register on INFAXIA</p>
+          <p class="text-muted text-xs leading-relaxed">Create your free INFAXIA account — the platform where all the action happens. Events, tournaments, and activities all run through INFAXIA.</p>
+        </div>
+        <div class="bg-card border border-gold/30 rounded-xl p-6 gold-glow">
+          <div class="w-9 h-9 bg-gold/10 border border-gold/30 rounded-full flex items-center justify-center text-gold font-bold font-mono text-sm mb-4">03</div>
+          <p class="text-xl mb-2">⭐</p>
+          <p class="text-white font-semibold mb-2">Earn IX Free Points</p>
+          <p class="text-muted text-xs leading-relaxed">Participate in INFAXIA events to earn IX Free Points (IX FP). The more you join, the more points you earn — and points are your key to unlocking jobs.</p>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-9 h-9 bg-teal/10 border border-teal/30 rounded-full flex items-center justify-center text-teal font-bold font-mono text-sm mb-4">04</div>
+          <p class="text-xl mb-2">📩</p>
+          <p class="text-white font-semibold mb-2">Qualify for a Job</p>
+          <p class="text-muted text-xs leading-relaxed">Once you meet the IX FP requirement, you automatically qualify to take on an available Job — no approval needed.</p>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-6">
+          <div class="w-9 h-9 bg-teal/10 border border-teal/30 rounded-full flex items-center justify-center text-teal font-bold font-mono text-sm mb-4">05</div>
+          <p class="text-xl mb-2">📝</p>
+          <p class="text-white font-semibold mb-2">Perform the Job</p>
+          <p class="text-muted text-xs leading-relaxed">Complete the assigned job according to the guidelines. Submit your work.</p>
+        </div>
+        <div class="bg-card border border-teal/30 rounded-xl p-6 teal-glow">
+          <div class="w-9 h-9 bg-teal/10 border border-teal/30 rounded-full flex items-center justify-center text-teal font-bold font-mono text-sm mb-4">06</div>
+          <p class="text-xl mb-2">💸</p>
+          <p class="text-white font-semibold mb-2">Get Paid in USDT</p>
+          <p class="text-muted text-xs leading-relaxed">After admin verification, your USDT reward is credited directly to your INFAXIA wallet. You'll receive an email confirmation once payment is processed.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 5. ELIGIBILITY & RULES ─── -->
+  <section id="eligibility" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-sm font-mono uppercase tracking-widest mb-4">Requirements</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who Can Join & What Are the Rules</h2>
+        <p class="text-muted max-w-xl mx-auto">IX DAO Jobs are open to all verified community members who follow platform standards.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card border border-border rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-5 flex items-center gap-2"><span class="text-teal">✓</span> To Qualify</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-3"><span class="text-teal font-mono text-xs mt-0.5">01</span>Member of IX DAO Discord</li>
+            <li class="flex items-start gap-3"><span class="text-teal font-mono text-xs mt-0.5">02</span>Verified INFAXIA account</li>
+            <li class="flex items-start gap-3"><span class="text-teal font-mono text-xs mt-0.5">03</span>IX DAO role obtained</li>
+            <li class="flex items-start gap-3"><span class="text-teal font-mono text-xs mt-0.5">04</span>Sufficient IX Free Points</li>
+            <li class="flex items-start gap-3"><span class="text-teal font-mono text-xs mt-0.5">05</span>One account per person only</li>
+          </ul>
+        </div>
+
+        <div class="bg-card border border-red-900/30 rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-5 flex items-center gap-2"><span class="text-red-400">✗</span> Not Allowed</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">—</span>Bots, automation, or scripts</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">—</span>Fake, edited, or recycled submissions</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">—</span>Multiple accounts or account sharing</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">—</span>VPNs or disposable emails</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">—</span>Manipulation of any kind</li>
+          </ul>
+        </div>
+
+        <div class="bg-card border border-border rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-5 flex items-center gap-2"><span class="text-gold">!</span> USDT Payout</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-gold mt-0.5">→</span>Paid after admin verification only</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-0.5">→</span>Credited to the wallet of your choice</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-0.5">→</span>Email confirmation sent on payout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. FAQ ─── -->
+  <section id="faq" class="py-24 px-6 bg-surface/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-teal text-sm font-mono uppercase tracking-widest mb-4">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            What are IX Free Points (IX FP)?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">IX FP are earned when you participate in INFAXIA events — not bought, not transferred. They are your access key to Jobs and serve as your participation points as an IX DAO member. The more events you join, the more Jobs you can unlock.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Can I do multiple Jobs?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">Yes — you can complete multiple Jobs as long as you meet the requirements for each. Some Jobs like the UX Job are one-time only. Each Job listing clearly states its own rules.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            How long does verification take?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">Verification time varies per Job. Once approved, USDT is credited to your INFAXIA wallet and an email confirmation is sent.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            What if my submission gets rejected?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">You will receive an email notification. Low-effort, incomplete, or fraudulent submissions are not eligible for rewards. Admin decisions are final and binding.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            How do I withdraw my USDT?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">After admin verification, your reward is credited to the wallet of your choice. You'll receive an email confirmation once payment is processed.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Is this available worldwide?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">Yes — anyone can join as long as you have a verified INFAXIA account and are a member of IX DAO Discord. No location restrictions.</p>
+        </details>
+        <details class="bg-card border border-border rounded-xl p-6 group">
+          <summary class="text-white font-medium cursor-pointer flex justify-between items-center">
+            Need help?
+            <span class="text-teal group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-muted text-sm mt-4 leading-relaxed">Create a Support Ticket in Discord or email us at <a href="mailto:dao@infaxia.io" class="text-teal hover:underline">dao@infaxia.io</a></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-border py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="/ix-dao-logo.png" alt="IX DAO" class="w-7 h-7 object-contain" />
+        <span class="text-muted text-sm">IX DAO — Support Organisation of INFAXIA</span>
+      </div>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="https://discord.gg/pmMjc6Mnbm" target="_blank" class="hover:text-white transition-colors">Discord</a>
+        <a href="https://x.com/ix_dao" target="_blank" class="hover:text-white transition-colors">X (Twitter)</a>
+      </div>
+      <p class="text-xs text-muted">© 2026 INFAXIA. Not a financial product.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
