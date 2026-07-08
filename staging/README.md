@@ -30,6 +30,19 @@ Single long-scroll landing page, max content width **1200px**, centered, `40px` 
 12. **CTA** — full-bleed background image (cyberpunk characters) with dark gradient overlay + radial accent glow; centered white H2 "Ready to complete your first job?", sub-paragraph, two buttons. Background is absolute-fill so the section height is driven by content.
 13. **Footer** — mark + wordmark + tagline on the left; Discord & X icon buttons (rounded square, hover glow + lift) on the right; copyright line "© 2026 IX DAO. Not a financial product."
 
+## Image Placement (CRITICAL — read this before coding)
+A previous implementation got the image positions wrong. Every image below is a **plain `<img>` that fills its container with `width:100%; height:100%; object-fit:cover; display:block`**, and the container has `overflow:hidden` + the card's border-radius. Images are NEVER inline/auto-sized and NEVER pushed below content — they sit inside a fixed-ratio box. In the prototype these are `<image-slot>` custom elements; **replace each with a normal `<img src="assets/…">`** exactly as mapped here.
+
+| Section | Container (aspect-ratio + position) | object-fit | Asset | Notes |
+|---|---|---|---|---|
+| Hero | `aspect-ratio:5/4`, right column of hero grid, `border-radius:22px`, gradient glow border, `overflow:hidden` | cover | `slot-ixdao-hero.webp` | Floating "0.1 USDT" glass chip is **absolutely positioned** over the bottom of this image (`bottom:18px; left:18px; right:18px`), not below it. |
+| Ecosystem ×2 | `aspect-ratio:16/9`, **top** of each card, card `border-radius:22px`, image has bottom hairline border | cover | `slot-ixdao-org1.webp`, `slot-ixdao-org2.webp` | Text block sits BELOW the image, inside `padding:28px`. |
+| Gallery | CSS grid `grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:14px`. Cell 1 = `grid-column:span 2; grid-row:span 2`; cells 2,3,5,6 = 1×1; cell 4 = `grid-column:span 2`. Each cell `border-radius:18px; overflow:hidden` | cover | `slot-ixdao-gal1..6.webp` (gal1 is the 2×2 feature) | Images fill each cell fully. |
+| Jobs ×4 | `aspect-ratio:16/10`, **top** of each card, card `border-radius:20px`, image has bottom hairline border | cover | `slot-ixdao-job1..4.webp` | Text (icon+title, body, reward chips, lock note) sits BELOW the image. Card #1 has a "500 followers" pill **absolutely positioned** at `top:12px; left:12px` over the image. |
+| Testimonials ×4 | `width:40px; height:40px; border-radius:50%; overflow:hidden` avatar, inline with name/role | cover | `slot-ixdao-avatar-1..4.webp` | Circular; keyed to testimonial `id`. |
+| CTA | **absolute-fill** background: wrapper `position:relative; overflow:hidden; border-radius:26px`; image in `position:absolute; inset:0` with `object-fit:cover`; dark gradient overlay + radial glow are sibling absolute layers ON TOP; text/buttons are `position:relative` above all layers | cover | `ixdao-cta-bg.jpg` | Section height is driven by the TEXT, not the image. Image must NOT be a normal flow block (that was the bug — it made the section huge). |
+| Nav / Footer logo | Nav `width:44px; height:34px`; Footer `width:40px; height:30px`; `object-fit:contain` | contain | `ixdao-mark.png` | Sits left of the "IX DAO" wordmark text. Contain (not cover) so the mark isn't cropped. |
+
 ## Interactions & Behavior
 - **Scroll reveal**: every `<section>` fades in + rises `translateY(30px) → 0`, `opacity 0 → 1`, transition `.7s cubic-bezier(.16,.8,.3,1)`, triggered by IntersectionObserver at `threshold 0.08`, `rootMargin 0px 0px -6% 0px`. Include a safety timeout that reveals all after 2.5s, and honor `prefers-reduced-motion`.
 - **Buttons**: primary/secondary lift `translateY(-3px)` + stronger glow on hover (`.22s ease`). Primary buttons have a living-gradient animation (`background-size:200% auto`, `btnFlow` keyframes, 5s linear infinite).
@@ -39,7 +52,7 @@ Single long-scroll landing page, max content width **1200px**, centered, `40px` 
 
 ## State Management
 - `openFaq` (index of open FAQ item; default `0`, `-1` = none).
-- Config/props (were prototype "tweaks"): `colorway` (`cyan` | `indigo` | `volt`), `glowIntensity` (0.2–1.8), `showStats` (bool), `showTestimonials` (bool).
+- Config/props (were prototype "tweaks"): `colorway` (`volt` default | `cyan` | `indigo` | `ember` | `gold`), `glowIntensity` (0.2–1.8), `showStats` (bool), `showTestimonials` (bool).
 - Static content arrays: testimonials (4), FAQ items (6). No data fetching.
 
 ## Design Tokens

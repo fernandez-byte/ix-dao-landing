@@ -472,7 +472,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 3400 },
-  &quot;colorway&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;cyan&quot;, &quot;indigo&quot;, &quot;volt&quot;], &quot;default&quot;: &quot;cyan&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Style&quot; },
+  &quot;colorway&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;volt&quot;, &quot;cyan&quot;, &quot;indigo&quot;, &quot;ember&quot;, &quot;gold&quot;], &quot;default&quot;: &quot;volt&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Style&quot; },
   &quot;glowIntensity&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.2, &quot;max&quot;: 1.8, &quot;step&quot;: 0.1, &quot;unit&quot;: &quot;×&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Style&quot; },
   &quot;showStats&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; },
   &quot;showTestimonials&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; }
@@ -530,6 +530,8 @@ class Component extends DCLogic {
       cyan:   { accent: '#35DCF0', accent2: '#4C7BFF', grad: 'linear-gradient(120deg, #35DCF0 0%, #4C7BFF 100%)', onAccent: '#06121C' },
       indigo: { accent: '#8A93FF', accent2: '#5B6BFF', grad: 'linear-gradient(120deg, #5B6BFF 0%, #8A7BFF 100%)', onAccent: '#FFFFFF' },
       volt:   { accent: '#3DE6A6', accent2: '#35DCF0', grad: 'linear-gradient(120deg, #24D68F 0%, #35DCF0 100%)', onAccent: '#052018' },
+      ember:  { accent: '#FF8A4B', accent2: '#FF5E5E', grad: 'linear-gradient(120deg, #FF8A4B 0%, #FF5E5E 100%)', onAccent: '#1A0A05' },
+      gold:   { accent: '#F5C542', accent2: '#FF9D3D', grad: 'linear-gradient(120deg, #F5C542 0%, #FF9D3D 100%)', onAccent: '#1C1405' },
     };
     const way = ways[this.props.colorway] || ways.cyan;
     const faqItems = this.faqs.map((f, i) => ({
