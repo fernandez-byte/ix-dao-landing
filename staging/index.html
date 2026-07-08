@@ -30,6 +30,16 @@
   @keyframes lineSweep { to { background-position:200% 0 } }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important } }
 </style>
+<style>
+/* FIX: image-slot must fill its aspect-ratio wrapper so images match the design framing */
+[style*="aspect-ratio"] > image-slot {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+</style>
 </helmet>
 
 <div ref="{{ rootRef }}" style="--bg:#0C1026; --bg2:#111634; --card:#181E42; --card2:#202856; --line:rgba(150,175,240,0.18); --accent:{{ accent }}; --accent2:{{ accent2 }}; --grad:{{ grad }}; --onAccent:{{ onAccent }}; --accent-dim:color-mix(in srgb, var(--accent) 16%, transparent); --text:#EBEFFF; --muted:#A6B2D6; --muted2:#6E7AA6; background:radial-gradient(ellipse 90% 60% at 72% -5%, #1B2358, var(--bg) 58%); color:var(--text); font-family:'IBM Plex Sans',system-ui,sans-serif; overflow-x:hidden; min-height:100vh;">
