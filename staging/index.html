@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="image-slot.js"></script>
-<meta name="ext-resource-dependency" content="slot-ixdao-avatar-1.webp">
-<meta name="ext-resource-dependency" content="slot-ixdao-avatar-2.webp">
-<meta name="ext-resource-dependency" content="slot-ixdao-avatar-3.webp">
-<meta name="ext-resource-dependency" content="slot-ixdao-avatar-4.webp">
-<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IX DAO — Complete the Job, Get Paid</title>
+  <meta name="description" content="IX DAO pays community members in USDT to complete real tasks — social shares, game reviews, UX feedback, and bug hunts on the INFAXIA platform. No investment required.">
+  <link rel="canonical" href="https://ix-dao-landing.vercel.app/">
+  <meta name="theme-color" content="#0C1026">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IX DAO — Complete the Job, Get Paid">
+  <meta property="og:description" content="IX DAO pays community members in USDT to complete real tasks — social shares, game reviews, UX feedback, and bug hunts on the INFAXIA platform. No investment required.">
+  <meta property="og:url" content="https://ix-dao-landing.vercel.app/">
+  <meta property="og:image" content="https://ix-dao-landing.vercel.app/assets/ixdao-mark.png">
+  <meta property="og:site_name" content="IX DAO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IX DAO — Complete the Job, Get Paid">
+  <meta name="twitter:description" content="IX DAO pays community members in USDT to complete real tasks — social shares, game reviews, UX feedback, and bug hunts on the INFAXIA platform. No investment required.">
+  <meta name="twitter:image" content="https://ix-dao-landing.vercel.app/assets/ixdao-mark.png">
+  <link rel="icon" type="image/png" href="assets/ixdao-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
   * { box-sizing: border-box; }
   body { margin: 0; }
   a { color: var(--accent); text-decoration: none; }
@@ -30,42 +35,26 @@
   @keyframes lineSweep { to { background-position:200% 0 } }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important } }
 </style>
-<style>
-/* FIX: image-slot must fill its aspect-ratio wrapper so images match the design framing */
-[style*="aspect-ratio"] > image-slot {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-}
-</style>
-</helmet>
+</head>
+<body>
+<div style="--bg:#0C1026; --bg2:#111634; --card:#181E42; --card2:#202856; --line:rgba(150,175,240,0.18); --accent:#3DE6A6; --accent2:#35DCF0; --grad:linear-gradient(120deg, #24D68F 0%, #35DCF0 100%); --onAccent:#052018; --accent-dim:color-mix(in srgb, var(--accent) 16%, transparent); --text:#EBEFFF; --muted:#A6B2D6; --muted2:#6E7AA6; background:radial-gradient(ellipse 90% 60% at 72% -5%, #1B2358, var(--bg) 58%); color:var(--text); font-family:'IBM Plex Sans',system-ui,sans-serif; overflow-x:hidden; min-height:100vh;">
 
-<div ref="{{ rootRef }}" style="--bg:#0C1026; --bg2:#111634; --card:#181E42; --card2:#202856; --line:rgba(150,175,240,0.18); --accent:{{ accent }}; --accent2:{{ accent2 }}; --grad:{{ grad }}; --onAccent:{{ onAccent }}; --accent-dim:color-mix(in srgb, var(--accent) 16%, transparent); --text:#EBEFFF; --muted:#A6B2D6; --muted2:#6E7AA6; background:radial-gradient(ellipse 90% 60% at 72% -5%, #1B2358, var(--bg) 58%); color:var(--text); font-family:'IBM Plex Sans',system-ui,sans-serif; overflow-x:hidden; min-height:100vh;">
-
-  <template id="__bundler_thumbnail">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <rect width="400" height="400" fill="#0C1026"/>
-      <rect x="120" y="120" width="160" height="160" rx="40" fill="#1B2140" stroke="#35DCF0" stroke-width="3"/>
-      <rect x="176" y="176" width="48" height="48" rx="8" transform="rotate(45 200 200)" fill="#35DCF0"/>
-    </svg>
-  </template>
+  
 
   <!-- ============ NAV ============ -->
-  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(12,16,38,0.74); backdrop-filter:blur(14px); border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-    <div style="display:flex; align-items:center; gap:11px;">
+  <nav id="top" style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(12,16,38,0.74); backdrop-filter:blur(14px); border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
+    <a href="#top" style="display:flex; align-items:center; gap:11px; text-decoration:none; color:inherit;">
       <div style="width:44px; height:34px; position:relative; flex-shrink:0;">
-        <image-slot id="ixdao-logo" shape="rect" fit="contain" src="ixdao-mark.png" placeholder="Logo"></image-slot>
+        <img src="assets/ixdao-mark.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
       <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.02em;">IX DAO</span>
-    </div>
+    </a>
     <div style="display:flex; align-items:center; gap:34px; font-size:14.5px; color:var(--muted);">
       <a href="#jobs" style="color:var(--muted);">Jobs</a>
       <a href="#how" style="color:var(--muted);">How It Works</a>
       <a href="#rules" style="color:var(--muted);">Eligibility</a>
       <a href="#faq" style="color:var(--muted);">FAQ</a>
-      <a href="#cta" style="display:flex; align-items:center; gap:8px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; padding:9px 18px; border-radius:10px; box-shadow:0 0 20px color-mix(in srgb, var(--accent) 35%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
+      <a href="https://discord.gg/pmMjc6Mnbm?utm_source=ix-dao-landing&amp;utm_medium=cta&amp;utm_campaign=join-discord&amp;utm_content=nav" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; padding:9px 18px; border-radius:10px; box-shadow:0 0 20px color-mix(in srgb, var(--accent) 35%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
         Join Us
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
       </a>
@@ -74,7 +63,7 @@
 
   <!-- ============ HERO ============ -->
   <header style="position:relative; padding:70px 40px 40px;">
-    <div style="position:absolute; top:-140px; left:50%; transform:translateX(-50%); width:900px; height:520px; background:radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--accent) 0%, transparent) 62%); pointer-events:none; opacity:{{ glowIntensity }};"></div>
+    <div style="position:absolute; top:-140px; left:50%; transform:translateX(-50%); width:900px; height:520px; background:radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--accent) 0%, transparent) 62%); pointer-events:none; opacity:1;"></div>
     <div style="position:absolute; top:50px; right:9%; width:230px; height:230px; border-radius:50%; background:radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 70%); filter:blur(34px); pointer-events:none; animation:floatA 9s ease-in-out infinite;"></div>
     <div style="position:absolute; bottom:-20px; left:5%; width:190px; height:190px; border-radius:50%; background:radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--accent2) 40%, transparent), transparent 70%); filter:blur(38px); pointer-events:none; animation:floatB 11s ease-in-out infinite;"></div>
     <div style="position:absolute; top:26%; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--accent) 75%, transparent) 50%, transparent 100%); background-size:200% 100%; pointer-events:none; opacity:.55; animation:lineSweep 6s linear infinite;"></div>
@@ -92,7 +81,7 @@
           We pay community members to explore and review the INFAXIA platform. No investment. Just show up and get paid.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;">
-          <a href="#cta" style="display:inline-flex; align-items:center; gap:9px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; font-size:15.5px; padding:15px 26px; border-radius:12px; box-shadow:0 0 30px color-mix(in srgb, var(--accent) 40%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
+          <a href="https://discord.gg/pmMjc6Mnbm?utm_source=ix-dao-landing&amp;utm_medium=cta&amp;utm_campaign=join-discord&amp;utm_content=hero" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; font-size:15.5px; padding:15px 26px; border-radius:12px; box-shadow:0 0 30px color-mix(in srgb, var(--accent) 40%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H10l-4 4v-4H7a2 2 0 0 1-2-2z"></path><circle cx="9.5" cy="9.5" r="1"></circle><circle cx="14.5" cy="9.5" r="1"></circle></svg>
             Join IX DAO Discord
           </a>
@@ -111,7 +100,7 @@
       <div style="position:relative;">
         <div style="position:absolute; inset:-2px; border-radius:24px; background:linear-gradient(150deg, color-mix(in srgb, var(--accent) 50%, transparent), color-mix(in srgb, var(--accent) 0%, transparent)); filter:blur(2px);"></div>
         <div style="position:relative; aspect-ratio:5/4; border-radius:22px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-hero" shape="rect" src="slot-ixdao-hero.webp" placeholder="Hero image — INFAXIA platform / gameplay shot"></image-slot>
+          <img src="assets/slot-ixdao-hero.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="position:absolute; bottom:18px; left:18px; right:18px; display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(8,15,11,0.82); backdrop-filter:blur(10px); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; padding:14px 18px;">
           <div>
@@ -127,7 +116,7 @@
   </header>
 
   <!-- ============ STATS STRIP ============ -->
-  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+  
   <section style="max-width:1200px; margin:0 auto; padding:14px 40px 20px;">
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:var(--line); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:18px; overflow:hidden;">
       <div style="background:var(--bg2); padding:26px 24px; display:flex; align-items:center; gap:15px;">
@@ -148,7 +137,7 @@
       </div>
     </div>
   </section>
-  </sc-if>
+  
 
   <!-- ============ FEATURES ============ -->
   <section style="max-width:1200px; margin:0 auto; padding:70px 40px 40px;">
@@ -192,7 +181,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:stretch;">
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:22px; overflow:hidden; display:flex; flex-direction:column;">
         <div style="aspect-ratio:16/9; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-org1" shape="rect" src="slot-ixdao-org1.webp" placeholder="IX DAO — community / governance visual"></image-slot>
+          <img src="assets/slot-ixdao-org1.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:28px;">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:8px;">The Support Organisation</div>
@@ -206,7 +195,7 @@
       </div>
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:22px; overflow:hidden; display:flex; flex-direction:column;">
         <div style="aspect-ratio:16/9; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-org2" shape="rect" src="slot-ixdao-org2.webp" placeholder="INFAXIA — gaming / tournament visual"></image-slot>
+          <img src="assets/slot-ixdao-org2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:28px;">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:8px;">The Platform</div>
@@ -232,22 +221,22 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:14px;">
       <div style="grid-column:span 2; grid-row:span 2; position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal1" shape="rect" src="slot-ixdao-gal1.webp" placeholder="Featured event photo"></image-slot>
+        <img src="assets/slot-ixdao-gal1.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal2" shape="rect" src="slot-ixdao-gal2.webp" placeholder="Gameplay"></image-slot>
+        <img src="assets/slot-ixdao-gal2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal3" shape="rect" src="slot-ixdao-gal3.webp" placeholder="Tournament"></image-slot>
+        <img src="assets/slot-ixdao-gal3.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="grid-column:span 2; position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal4" shape="rect" src="slot-ixdao-gal4.webp" placeholder="Community meetup"></image-slot>
+        <img src="assets/slot-ixdao-gal4.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal5" shape="rect" src="slot-ixdao-gal5.webp" placeholder="Prize / payout"></image-slot>
+        <img src="assets/slot-ixdao-gal5.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-        <image-slot id="ixdao-gal6" shape="rect" src="slot-ixdao-gal6.webp" placeholder="Avatar / metaverse"></image-slot>
+        <img src="assets/slot-ixdao-gal6.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </section>
@@ -303,12 +292,12 @@
     <div style="text-align:center; margin-bottom:44px;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); text-shadow:0 0 14px color-mix(in srgb, var(--accent) 60%, transparent); margin-bottom:14px;">Get Paid For Your Work</div>
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4vw,46px); letter-spacing:-0.02em; margin:0;">Available Jobs</h2>
-      <p style="font-size:15.5px; line-height:1.55; color:var(--muted); margin:16px auto 0; max-width:540px;">You need an <span style="color:var(--accent); font-weight:600;">IX Vanguard</span> role to get started. <a href="#" style="font-weight:600; border-bottom:1px solid color-mix(in srgb, var(--accent) 50%, transparent);">Join our Discord server</a></p>
+      <p style="font-size:15.5px; line-height:1.55; color:var(--muted); margin:16px auto 0; max-width:540px;">You need an <span style="color:var(--accent); font-weight:600;">IX Vanguard</span> role to get started. <a href="https://discord.gg/pmMjc6Mnbm?utm_source=ix-dao-landing&amp;utm_medium=cta&amp;utm_campaign=join-discord&amp;utm_content=jobs-eyebrow" target="_blank" rel="noopener" style="font-weight:600; border-bottom:1px solid color-mix(in srgb, var(--accent) 50%, transparent);">Join our Discord server</a></p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:20px; overflow:hidden; transition:border-color .28s ease, box-shadow .28s ease, transform .28s ease;" style-hover="border-color:color-mix(in srgb, var(--accent) 70%, transparent); box-shadow:0 0 30px color-mix(in srgb, var(--accent) 32%, transparent); transform:translateY(-4px)">
         <div style="aspect-ratio:16/10; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-job1" shape="rect" src="slot-ixdao-job1.webp" placeholder="Social share visual"></image-slot>
+          <img src="assets/slot-ixdao-job1.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div style="position:absolute; top:12px; left:12px; display:flex; align-items:center; gap:6px; background:rgba(8,15,11,0.82); backdrop-filter:blur(8px); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:100px; padding:5px 11px; font-size:11px; color:var(--accent); font-family:'IBM Plex Mono',monospace;">500 followers</div>
         </div>
         <div style="padding:22px;">
@@ -320,7 +309,7 @@
       </div>
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:20px; overflow:hidden; transition:border-color .28s ease, box-shadow .28s ease, transform .28s ease;" style-hover="border-color:color-mix(in srgb, var(--accent) 70%, transparent); box-shadow:0 0 30px color-mix(in srgb, var(--accent) 32%, transparent); transform:translateY(-4px)">
         <div style="aspect-ratio:16/10; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-job2" shape="rect" src="slot-ixdao-job2.webp" placeholder="Game review visual"></image-slot>
+          <img src="assets/slot-ixdao-job2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:22px;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="9" rx="4"></rect><path d="M7 12v-1.5M7 12v1.5M7 12H5.5M7 12h1.5"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg><h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; margin:0;">Game Review Job</h3></div>
@@ -331,7 +320,7 @@
       </div>
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:20px; overflow:hidden; transition:border-color .28s ease, box-shadow .28s ease, transform .28s ease;" style-hover="border-color:color-mix(in srgb, var(--accent) 70%, transparent); box-shadow:0 0 30px color-mix(in srgb, var(--accent) 32%, transparent); transform:translateY(-4px)">
         <div style="aspect-ratio:16/10; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-job3" shape="rect" src="slot-ixdao-job3.webp" placeholder="UX feedback visual"></image-slot>
+          <img src="assets/slot-ixdao-job3.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:22px;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="2.6"></circle></svg><h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; margin:0;">User Experience Job</h3></div>
@@ -342,7 +331,7 @@
       </div>
       <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:20px; overflow:hidden; transition:border-color .28s ease, box-shadow .28s ease, transform .28s ease;" style-hover="border-color:color-mix(in srgb, var(--accent) 70%, transparent); box-shadow:0 0 30px color-mix(in srgb, var(--accent) 32%, transparent); transform:translateY(-4px)">
         <div style="aspect-ratio:16/10; position:relative; border-bottom:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-          <image-slot id="ixdao-job4" shape="rect" src="slot-ixdao-job4.webp" placeholder="Bug hunt visual"></image-slot>
+          <img src="assets/slot-ixdao-job4.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:22px;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="4.5" ry="5.5"></ellipse><path d="M12 8V5M9.5 6l1.4 1.6M14.5 6l-1.4 1.6M7.5 13H4M20 13h-3.5M8 9.5L5 8M16 9.5L19 8M8 16.5L5 18M16 16.5L19 18"></path></svg><h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; margin:0;">Bug Hunt Job</h3></div>
@@ -355,31 +344,76 @@
   </section>
 
   <!-- ============ TESTIMONIALS ============ -->
-  <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+  
   <section style="max-width:1200px; margin:0 auto; padding:60px 40px;">
     <div style="text-align:center; margin-bottom:44px;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); text-shadow:0 0 14px color-mix(in srgb, var(--accent) 60%, transparent); margin-bottom:14px;">Real Members From The INFAXIA Discord</div>
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4vw,46px); letter-spacing:-0.02em; margin:0;">Real People. Real Rewards.</h2>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
-      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="4">
+      
         <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:18px; padding:24px; display:flex; flex-direction:column; gap:16px;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--accent-dim)" stroke="none"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3H4v0M20 7h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3h-3"></path><path d="M4 9h4v4H5v3H4zM15 9h4v4h-3v3h-1z"></path></svg>
-          <p style="font-size:14.5px; line-height:1.55; color:var(--text); margin:0; flex:1;">{{ t.quote }}</p>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--text); margin:0; flex:1;">RPS champ! Got my 50 IX Free Points right after the tournament. Legit.</p>
           <div style="display:flex; align-items:center; gap:12px;">
             <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
-              <image-slot id="ixdao-avatar-{{ t.id }}" shape="circle" src="slot-ixdao-avatar-{{ t.id }}.webp" placeholder="Photo"></image-slot>
+              <img src="assets/slot-ixdao-avatar-1.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;">
             </div>
             <div>
-              <div style="font-weight:600; font-size:14px;">{{ t.name }}</div>
-              <div style="font-size:12px; color:var(--muted2);">{{ t.role }}</div>
+              <div style="font-weight:600; font-size:14px;">Valkyrie</div>
+              <div style="font-size:12px; color:var(--muted2);">INFAXIA Community</div>
             </div>
           </div>
         </div>
-      </sc-for>
+      
+
+        <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:18px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--accent-dim)" stroke="none"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3H4v0M20 7h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3h-3"></path><path d="M4 9h4v4H5v3H4zM15 9h4v4h-3v3h-1z"></path></svg>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--text); margin:0; flex:1;">Joined an AMA + Poker night and got my Free Points instantly. So fun.</p>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
+              <img src="assets/slot-ixdao-avatar-2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;">
+            </div>
+            <div>
+              <div style="font-weight:600; font-size:14px;">beyo_16</div>
+              <div style="font-size:12px; color:var(--muted2);">INFAXIA Community</div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:18px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--accent-dim)" stroke="none"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3H4v0M20 7h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3h-3"></path><path d="M4 9h4v4H5v3H4zM15 9h4v4h-3v3h-1z"></path></svg>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--text); margin:0; flex:1;">Rewards land the moment the game ends. Really loving the experience.</p>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
+              <img src="assets/slot-ixdao-avatar-3.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;">
+            </div>
+            <div>
+              <div style="font-weight:600; font-size:14px;">Daredevil</div>
+              <div style="font-size:12px; color:var(--muted2);">INFAXIA Community</div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div style="background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:18px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--accent-dim)" stroke="none"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3H4v0M20 7h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3h-3"></path><path d="M4 9h4v4H5v3H4zM15 9h4v4h-3v3h-1z"></path></svg>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--text); margin:0; flex:1;">Tried Poker, earned IX FP too. Excited to keep grinding for more.</p>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0; border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));">
+              <img src="assets/slot-ixdao-avatar-4.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;">
+            </div>
+            <div>
+              <div style="font-weight:600; font-size:14px;">Powerpuff</div>
+              <div style="font-size:12px; color:var(--muted2);">INFAXIA Community</div>
+            </div>
+          </div>
+        </div>
+      
     </div>
   </section>
-  </sc-if>
+  
 
   <!-- ============ RULES ============ -->
   <section id="rules" style="max-width:1200px; margin:0 auto; padding:60px 40px;">
@@ -424,31 +458,86 @@
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,42px); letter-spacing:-0.02em; margin:0;">Frequently Asked Questions</h2>
     </div>
     <div style="display:grid; gap:12px;">
-      <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="5">
-        <div style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
-          <div onClick="{{ item.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
-            <span style="font-weight:600; font-size:16px; color:var(--text);">{{ item.q }}</span>
-            <svg width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:{{ item.rotate }};" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">What are IX Free Points (IX FP)?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(180deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div style="max-height:{{ item.answerMax }}; overflow:hidden; transition:max-height .3s ease;">
-            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">{{ item.a }}</p>
+          <div class="faq-body" style="max-height:240px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">IX FP are points you earn by joining INFAXIA events, games and tournaments. They are your key to unlocking paid jobs.</p>
           </div>
         </div>
-      </sc-for>
+      
+
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">Can I do multiple jobs?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(0deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-body" style="max-height:0px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">Yes. You can complete as many jobs as you qualify for, as long as you follow the rules and submit genuine work each time.</p>
+          </div>
+        </div>
+      
+
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">How long does verification take?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(0deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-body" style="max-height:0px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">Most submissions are reviewed and verified within 24 hours. Once approved, your USDT payout is processed to your wallet.</p>
+          </div>
+        </div>
+      
+
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">What if my submission gets rejected?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(0deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-body" style="max-height:0px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">You will receive feedback explaining why. In most cases you can fix the issue and resubmit for another review.</p>
+          </div>
+        </div>
+      
+
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">How do I withdraw my USDT?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(0deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-body" style="max-height:0px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">Your reward is sent directly to the wallet of your choice after admin verification — no extra withdrawal steps needed.</p>
+          </div>
+        </div>
+      
+
+        <div class="faq-item" style="border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); border-radius:14px; overflow:hidden; background:var(--card);">
+          <div class="faq-head" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; cursor:pointer;">
+            <span style="font-weight:600; font-size:16px; color:var(--text);">Is this available worldwide?</span>
+            <svg class="faq-chevron" width="20" height="20" style="flex-shrink:0; transition:transform .25s ease; transform:rotate(0deg);" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-body" style="max-height:0px; overflow:hidden; transition:max-height .3s ease;">
+            <p style="margin:0; padding:0 24px 22px; color:var(--muted); font-size:14.5px; line-height:1.6;">Yes. IX DAO jobs are open to all verified community members globally who follow the platform standards.</p>
+          </div>
+        </div>
+      
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
   <section id="cta" style="max-width:1200px; margin:0 auto; padding:40px 40px 70px;">
     <div style="position:relative; border-radius:26px; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 28%, transparent); background:linear-gradient(160deg, var(--card2), var(--card));">
-      <div style="position:absolute; inset:0;"><image-slot id="ixdao-cta-bg" shape="rect" src="ixdao-cta-bg.jpg" placeholder="Drop CTA background image"></image-slot></div>
+      <div style="position:absolute; inset:0;"><img src="assets/ixdao-cta-bg.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,11,9,0.55), rgba(7,11,9,0.82)); pointer-events:none;"></div>
-      <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 120%, color-mix(in srgb, var(--accent) 28%, transparent), color-mix(in srgb, var(--accent) 0%, transparent) 60%); pointer-events:none; opacity:{{ glowIntensity }};"></div>
+      <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 120%, color-mix(in srgb, var(--accent) 28%, transparent), color-mix(in srgb, var(--accent) 0%, transparent) 60%); pointer-events:none; opacity:1;"></div>
       <div style="position:relative; text-align:center; padding:70px 32px;">
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4.4vw,50px); letter-spacing:-0.02em; margin:0; color:#FFFFFF;">Ready to complete<br>your first job?</h2>
         <p style="font-size:16px; color:rgba(255,255,255,0.82); margin:18px auto 0; max-width:440px;">Join the Discord, register on INFAXIA, and start earning USDT today.</p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:32px; position:relative; z-index:2;">
-          <a href="#" style="display:inline-flex; align-items:center; gap:9px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; font-size:15.5px; padding:15px 28px; border-radius:12px; box-shadow:0 0 34px color-mix(in srgb, var(--accent) 50%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
+          <a href="https://discord.gg/pmMjc6Mnbm?utm_source=ix-dao-landing&amp;utm_medium=cta&amp;utm_campaign=join-discord&amp;utm_content=final-cta" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:var(--grad); background-size:200% auto; color:var(--onAccent); animation:btnFlow 5s linear infinite; font-weight:600; font-size:15.5px; padding:15px 28px; border-radius:12px; box-shadow:0 0 34px color-mix(in srgb, var(--accent) 50%, transparent); transition:transform .22s ease, box-shadow .22s ease;" style-hover="transform:translateY(-3px); box-shadow:0 0 46px color-mix(in srgb, var(--accent) 68%, transparent)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H10l-4 4v-4H7a2 2 0 0 1-2-2z"></path><circle cx="9.5" cy="9.5" r="1"></circle><circle cx="14.5" cy="9.5" r="1"></circle></svg>
             Join IX DAO Discord
           </a>
@@ -462,12 +551,12 @@
   <footer style="border-top:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); padding:36px 40px;">
     <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
       <div style="display:flex; align-items:center; gap:11px;">
-        <div style="width:40px; height:30px; position:relative; flex-shrink:0;"><image-slot id="ixdao-logo-footer" shape="rect" fit="contain" src="ixdao-mark.png" placeholder="Logo"></image-slot></div>
+        <div style="width:40px; height:30px; position:relative; flex-shrink:0;"><img src="assets/ixdao-mark.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
         <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;">IX DAO</span>
         <span style="color:var(--muted2); font-size:13px;">— Support Organisation of INFAXIA</span>
       </div>
       <div style="display:flex; align-items:center; gap:12px;">
-        <a href="#" aria-label="Discord" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); color:var(--muted); transition:color .22s ease, border-color .22s ease, transform .22s ease;" style-hover="color:var(--accent); border-color:color-mix(in srgb, var(--accent) 60%, transparent); transform:translateY(-2px)">
+        <a href="https://discord.gg/pmMjc6Mnbm?utm_source=ix-dao-landing&amp;utm_medium=cta&amp;utm_campaign=join-discord&amp;utm_content=footer" target="_blank" rel="noopener" aria-label="Discord" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); color:var(--muted); transition:color .22s ease, border-color .22s ease, transform .22s ease;" style-hover="color:var(--accent); border-color:color-mix(in srgb, var(--accent) 60%, transparent); transform:translateY(-2px)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.54 5.34A17.7 17.7 0 0 0 15.2 4l-.22.44a13.2 13.2 0 0 1 3.86 1.23 12.9 12.9 0 0 0-11.7 0A13.2 13.2 0 0 1 11 4.44L10.8 4a17.7 17.7 0 0 0-4.34 1.34C3.5 9.36 2.7 13.28 3.1 17.15a17.9 17.9 0 0 0 5.4 2.7l.43-.6a11.6 11.6 0 0 1-1.9-.9l.47-.36a12.6 12.6 0 0 0 10.8 0l.47.36c-.6.35-1.24.65-1.9.9l.43.6a17.9 17.9 0 0 0 5.4-2.7c.47-4.5-.8-8.38-3.56-11.81ZM9.3 14.85c-.86 0-1.57-.79-1.57-1.76s.69-1.76 1.57-1.76 1.58.8 1.57 1.76c0 .97-.7 1.76-1.57 1.76Zm5.4 0c-.86 0-1.57-.79-1.57-1.76s.69-1.76 1.57-1.76 1.58.8 1.56 1.76c0 .97-.69 1.76-1.56 1.76Z"></path></svg>
         </a>
         <a href="#" aria-label="X (Twitter)" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:var(--card); border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); color:var(--muted); transition:color .22s ease, border-color .22s ease, transform .22s ease;" style-hover="color:var(--accent); border-color:color-mix(in srgb, var(--accent) 60%, transparent); transform:translateY(-2px)">
@@ -479,92 +568,42 @@
   </footer>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 3400 },
-  &quot;colorway&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;volt&quot;, &quot;cyan&quot;, &quot;indigo&quot;, &quot;ember&quot;, &quot;gold&quot;], &quot;default&quot;: &quot;volt&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Style&quot; },
-  &quot;glowIntensity&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.2, &quot;max&quot;: 1.8, &quot;step&quot;: 0.1, &quot;unit&quot;: &quot;×&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Style&quot; },
-  &quot;showStats&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; },
-  &quot;showTestimonials&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; }
-}">
-class Component extends DCLogic {
-  state = { openFaq: 0 };
 
-  testimonials = [
-    { id: 1, name: 'Valkyrie', role: 'INFAXIA Community', quote: 'RPS champ! Got my 50 IX Free Points right after the tournament. Legit.' },
-    { id: 2, name: 'beyo_16', role: 'INFAXIA Community', quote: 'Joined an AMA + Poker night and got my Free Points instantly. So fun.' },
-    { id: 3, name: 'Daredevil', role: 'INFAXIA Community', quote: 'Rewards land the moment the game ends. Really loving the experience.' },
-    { id: 4, name: 'Powerpuff', role: 'INFAXIA Community', quote: 'Tried Poker, earned IX FP too. Excited to keep grinding for more.' },
-  ];
-
-  faqs = [
-    { q: 'What are IX Free Points (IX FP)?', a: 'IX FP are points you earn by joining INFAXIA events, games and tournaments. They are your key to unlocking paid jobs.' },
-    { q: 'Can I do multiple jobs?', a: 'Yes. You can complete as many jobs as you qualify for, as long as you follow the rules and submit genuine work each time.' },
-    { q: 'How long does verification take?', a: 'Most submissions are reviewed and verified within 24 hours. Once approved, your USDT payout is processed to your wallet.' },
-    { q: 'What if my submission gets rejected?', a: 'You will receive feedback explaining why. In most cases you can fix the issue and resubmit for another review.' },
-    { q: 'How do I withdraw my USDT?', a: 'Your reward is sent directly to the wallet of your choice after admin verification — no extra withdrawal steps needed.' },
-    { q: 'Is this available worldwide?', a: 'Yes. IX DAO jobs are open to all verified community members globally who follow the platform standards.' },
-  ];
-
-  componentDidMount() {
-    requestAnimationFrame(() => this.setupReveal());
-  }
-
-  setupReveal() {
-    const root = this._root || document;
-    const secs = Array.from(root.querySelectorAll('section'));
-    if (!secs.length) return;
-    const reveal = (s) => { s.style.opacity = '1'; s.style.transform = 'none'; };
-    if (!('IntersectionObserver' in window)) { secs.forEach(reveal); return; }
-    secs.forEach((s) => {
-      s.style.opacity = '0';
-      s.style.transform = 'translateY(30px)';
-      s.style.transition = 'opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1)';
-      s.style.willChange = 'opacity, transform';
+<script>
+(function(){
+  // preserve prototype hover effects (style-hover attribute)
+  document.querySelectorAll('[style-hover]').forEach(function(el){
+    var hov=el.getAttribute('style-hover'), base=el.getAttribute('style')||'';
+    el.addEventListener('mouseenter',function(){el.setAttribute('style',base+';'+hov);});
+    el.addEventListener('mouseleave',function(){el.setAttribute('style',base);});
+  });
+  // FAQ accordion
+  document.querySelectorAll('.faq-head').forEach(function(h){
+    h.addEventListener('click',function(){
+      var item=h.closest('.faq-item'), body=item.querySelector('.faq-body'), chev=h.querySelector('.faq-chevron');
+      var isOpen=body.style.maxHeight && body.style.maxHeight!=='0px';
+      document.querySelectorAll('.faq-item').forEach(function(it){
+        it.querySelector('.faq-body').style.maxHeight='0px';
+        var c=it.querySelector('.faq-chevron'); if(c)c.style.transform='rotate(0deg)';
+      });
+      if(!isOpen){ body.style.maxHeight='240px'; if(chev)chev.style.transform='rotate(180deg)'; }
     });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
-    secs.forEach((s) => io.observe(s));
-    this._revealTimer = setTimeout(() => secs.forEach(reveal), 2500);
+  });
+  // scroll reveal
+  var secs=Array.prototype.slice.call(document.querySelectorAll('section'));
+  if(secs.length){
+    var reveal=function(s){s.style.opacity='1';s.style.transform='none';};
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce||!('IntersectionObserver' in window)){secs.forEach(reveal);}
+    else{
+      secs.forEach(function(s){s.style.opacity='0';s.style.transform='translateY(30px)';
+        s.style.transition='opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1)';s.style.willChange='opacity, transform';});
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+      secs.forEach(function(s){io.observe(s);});
+      setTimeout(function(){secs.forEach(reveal);},2500);
+    }
   }
-
-  componentWillUnmount() {
-    if (this._revealTimer) clearTimeout(this._revealTimer);
-  }
-
-  renderVals() {
-    const open = this.state.openFaq;
-    const glowIntensity = this.props.glowIntensity ?? 1;
-    const ways = {
-      cyan:   { accent: '#35DCF0', accent2: '#4C7BFF', grad: 'linear-gradient(120deg, #35DCF0 0%, #4C7BFF 100%)', onAccent: '#06121C' },
-      indigo: { accent: '#8A93FF', accent2: '#5B6BFF', grad: 'linear-gradient(120deg, #5B6BFF 0%, #8A7BFF 100%)', onAccent: '#FFFFFF' },
-      volt:   { accent: '#3DE6A6', accent2: '#35DCF0', grad: 'linear-gradient(120deg, #24D68F 0%, #35DCF0 100%)', onAccent: '#052018' },
-      ember:  { accent: '#FF8A4B', accent2: '#FF5E5E', grad: 'linear-gradient(120deg, #FF8A4B 0%, #FF5E5E 100%)', onAccent: '#1A0A05' },
-      gold:   { accent: '#F5C542', accent2: '#FF9D3D', grad: 'linear-gradient(120deg, #F5C542 0%, #FF9D3D 100%)', onAccent: '#1C1405' },
-    };
-    const way = ways[this.props.colorway] || ways.cyan;
-    const faqItems = this.faqs.map((f, i) => ({
-      q: f.q,
-      a: f.a,
-      rotate: open === i ? 'rotate(180deg)' : 'rotate(0deg)',
-      answerMax: open === i ? '240px' : '0px',
-      toggle: () => this.setState({ openFaq: open === i ? -1 : i }),
-    }));
-    return {
-      faqItems,
-      testimonials: this.testimonials,
-      accent: way.accent,
-      accent2: way.accent2,
-      grad: way.grad,
-      onAccent: way.onAccent,
-      rootRef: (el) => { if (el) this._root = el; },
-      glowIntensity,
-      showStats: this.props.showStats ?? true,
-      showTestimonials: this.props.showTestimonials ?? true,
-    };
-  }
-}
+})();
 </script>
 </body>
 </html>
